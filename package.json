@@ -1,7 +1,7 @@
 {
     "name": "discord-badoo",
     "description": "An Discord.js middleware for create private voice channels for boy/girl",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "main": "discord-badoo.js",
     "license": "MIT",
     "dependencies": {},
