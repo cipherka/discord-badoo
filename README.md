@@ -8,6 +8,11 @@ $ npm install github:vlfz/discord-badoo
 ```
 * Use middleware in your production code
 ```js
+const {
+    middleware: DiscordBadooMiddleware
+} = require('./discord-badoo');
+
+// Discord.js client
 client.on('voiceStateUpdate', DiscordBadooMiddleware({
     parentID: "CATEGORY_ID",
     boyChannelID: "BOY_CHANNEL_ID",
