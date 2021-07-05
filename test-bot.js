@@ -11,7 +11,7 @@ client.on('ready', () => {
     client.user.setPresence({
         activity: config.activity
     });
-    return console.info(`* ${client.user.tag} (ID: ${client.user.id}) запущен!`);
+    return console.info(`* ${client.user.tag} (ID: ${client.user.id}) is launched!`);
 });
 
 client.on('voiceStateUpdate', DiscordBadooMiddleware({
