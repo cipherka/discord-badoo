@@ -10,7 +10,7 @@ $ npm install github:vlfz/discord-badoo
 ```js
 const {
     middleware: DiscordBadooMiddleware
-} = require('./discord-badoo');
+} = require('discord-badoo');
 
 // Discord.js client
 client.on('voiceStateUpdate', DiscordBadooMiddleware({
