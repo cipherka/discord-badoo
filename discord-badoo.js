@@ -11,8 +11,8 @@ const middleware = ({
     if ((old.user && old.user.bot) || (member.user && member.user.bot)) return;
 
     let channels = {
-        boy: member.guild.channels.cache.filter(channel => channel.parent.id === parentID).get(boyChannelID),
-        girl: member.guild.channels.cache.filter(channel => channel.parent.id === parentID).get(girlChannelID)
+        boy: member.guild.channels.cache.filter(channel => channel.parentID === parentID).get(boyChannelID),
+        girl: member.guild.channels.cache.filter(channel => channel.parentID === parentID).get(girlChannelID)
     };
     if (!channels.boy || !channels.girl) return;
 
