@@ -1,0 +1,12 @@
+{
+    "token": "BOT_TOKEN",
+    "activity": {
+        "type": "WATCHING",
+        "name": "на тебя, солнышко"
+    },
+    "channels": {
+        "parent": "CATEGORY_ID",
+        "boy": "BOY_CHANNEL_ID",
+        "girl": "GIRL_CHANNEL_ID"
+    }
+}
