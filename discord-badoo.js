@@ -41,25 +41,25 @@ const middleware = ({
             .then((channel) => {
                 randomBoy.voice.setChannel(channel).catch(() => null);
                 randomGirl.voice.setChannel(channel).catch(() => null);
-            });
+            }).catch(() => null);
     }
 
     if (old.channel) {
         if (
-            (member.channel && member.channel.id === channels.boy || member.channel && member.channel.id === channels.girl) &&
+            (member.channel && old.channel.parentID === parentID && member.channel.id === channels.boy.id || member.channel && old.channel.parentID === parentID && member.channel.id === channels.girl.id) &&
             old.channel.members.filter(member => !member.user.bot).size >= 1
-        ) old.setChannel(old.channel);
+        ) old.setChannel(old.channel).catch(() => null);
 
         let filter = (channel) =>
             (channel.parentID == parentID) &&
-            (channel.id !== boyChannelID) &&
-            (channel.id !== girlChannelID) &&
+            (channel.id !== channels.boy.id) &&
+            (channel.id !== channels.girl.id) &&
             (old.channel.id === channel.id) &&
             (old.channel.members.filter(member => !member.user.bot).size <= 0) &&
             (channel.deletable);
 
         for (let channel of old.guild.channels.cache.array().filter(filter)) {
-            channel.delete();
+            channel.delete().catch(() => null);
         }
     }
 };
